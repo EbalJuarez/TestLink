@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - Sistema Odontología</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container auth-container">
+      <div class="panel auth-panel">
+        <h1>Registrar usuario</h1>
+
+        <form id="registerForm">
+          <label>
+            Usuario
+            <input name="username" type="text" placeholder="Nombre de usuario" required />
+          </label>
+
+          <label>
+            Contraseña
+            <input name="password" type="password" placeholder="Contraseña" required />
+          </label>
+
+          <label>
+            Rol ID
+            <input name="rol_id" type="number" min="1" value="1" required />
+          </label>
+
+          <label>
+            Odontólogo ID
+            <input name="odontologo_id" type="number" min="1" placeholder="Opcional" />
+          </label>
+
+          <label>
+            Paciente ID
+            <input name="paciente_id" type="number" min="1" placeholder="Opcional" />
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="primary">Guardar usuario</button>
+            <a href="login.html" class="button-link secondary">Volver al login</a>
+          </div>
+        </form>
+
+        <p id="registerStatus" class="status-ok">Completa el formulario.</p>
+      </div>
+    </div>
+
+    <script src="register.js"></script>
+  </body>
+</html>

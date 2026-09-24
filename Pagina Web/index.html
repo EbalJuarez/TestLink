@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD API - Sistema Odontología</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CRUD API - Sistema Odontología</h1>
+        <button id="logoutBtn" class="danger" type="button">Cerrar sesión</button>
+      </header>
+
+      <section class="panel topbar">
+        <label>
+          Entidad
+          <select id="endpointSelect">
+            <option value="pacientes">Pacientes</option>
+            <option value="odontologos">Odontólogos</option>
+            <option value="facturas">Facturas</option>
+            <option value="medicamentos">Medicamentos</option>
+            <option value="usuarios">Usuarios</option>
+            <option value="citas">Citas</option>
+            <option value="recetas">Recetas</option>
+            <option value="tratamientos">Tratamientos</option>
+            <option value="roles">Roles</option>
+            <option value="detalle_facturas">Detalle Facturas</option>
+            <option value="receta_detalle">Receta Detalle</option>
+          </select>
+        </label>
+
+        <button id="loadBtn" class="secondary" type="button">Cargar datos</button>
+        <button id="resetFormBtn" class="secondary" type="button">Nuevo registro</button>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h2 id="formTitle">Crear pacientes</h2>
+
+          <form id="entityForm">
+            <div id="idField" style="display: none; margin-bottom: 16px;">
+              <label>
+                ID
+                <input id="idInput" name="id" type="number" placeholder="ID a actualizar" />
+              </label>
+            </div>
+
+            <div id="methodField" style="margin-bottom: 16px;">
+              <label>
+                Método
+                <select id="methodSelect">
+                  <option value="POST">Crear</option>
+                  <option value="PUT">Actualizar</option>
+                </select>
+              </label>
+            </div>
+
+            <div id="formFields"></div>
+
+            <div class="actions">
+              <button type="submit" class="primary">Guardar</button>
+              <button type="button" id="clearFormBtn" class="secondary">Limpiar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Respuesta API</h2>
+          <div id="responseBox" class="response-box">Esperando respuesta...</div>
+          <p id="statusText" class="status-ok">Listo</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Registros</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
